@@ -8,19 +8,40 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITextFieldDelegate {
     
     
-    var APIC = AirportAPI()
+    @IBOutlet var iataCodeField: UITextField!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    var airportAPI = AirportAPI()
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Clear first responder
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        iataCodeField.resignFirstResponder()
+        
+        return true
+    }
+    
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
         
     }
     
+    
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+    
+        if let destination = iataCodeField.text {
+            airportAPI.retrieveCode(destination)
 
+        }
+    }
     
-    
+
 }

@@ -19,7 +19,7 @@ class AirportAPI {
         "postman-token": "aca04bf5-0a14-fd9b-5a38-2be24b24d7b3"
     ]
     
-    func retreveCode(_ searchedData: String) {
+    func retrieveCode(_ searchedData: String) {
         
         let request = NSMutableURLRequest(url: URL(string: "https://www.air-port-codes.com/api/v1/single?iata=\(searchedData)")!,
                                           cachePolicy: .useProtocolCachePolicy,

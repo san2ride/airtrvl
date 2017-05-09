@@ -16,5 +16,34 @@ class DataStore: NSObject {
     var currentAirport = Airport()
     var airportArray = [Airport]()
     
-
+    
+//    func createAirport() -> Airport {
+//        let newAirport = Airport(dict: JSONDictionary)
+//        
+//        airportArray.append(newAirport)
+//        
+//        return newAirport
+//    }
+    
+    func removeAirport(airport: Airport) {
+        if let index = airportArray.index(of: airport) {
+            airportArray.remove(at: index)
+        }
+    }
+    
+    func moveAiportAtIndex(fromIndex: Int, toIndex: Int) {
+        if fromIndex == toIndex {
+            return
+        }
+        
+        // Get reference to object being moved so you can re-insert it
+        let movedAirport = airportArray[fromIndex]
+        
+        // Remove airport from array
+        airportArray.remove(at: fromIndex)
+        
+        // Insert airport in array at new location
+        airportArray.insert(movedAirport, at: toIndex)
+        
+    }
 }

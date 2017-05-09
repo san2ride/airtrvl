@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let rootViewController = window!.rootViewController as! UINavigationController
+        let airportsViewController = rootViewController.topViewController as! HomeViewController
+        airportsViewController.airportAPI = AirportAPI()
         
-//        let rootViewController = window!.rootViewController as! UINavigationController
-//        let homeViewController = rootViewController.topViewController as! HomeViewController
-//        homeViewController.airport = DataStore.sharedInstance
         
         return true
     }
