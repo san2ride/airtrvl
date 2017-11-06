@@ -20,7 +20,6 @@
 		A4230AF01EB596CA0029531B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4230AEF1EB596CA0029531B /* MapViewController.swift */; };
 		A4230AF31EB5A0360029531B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4230AF21EB5A0360029531B /* MapKit.framework */; };
 		A4230AF81EB5A7700029531B /* AirportAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4230AF71EB5A7700029531B /* AirportAPI.swift */; };
-		A45572881EB8541D00B315A4 /* testTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572871EB8541D00B315A4 /* testTableViewController.swift */; };
 		A4A2EA411EB6A2F200C5A4C5 /* AirportDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A2EA401EB6A2F200C5A4C5 /* AirportDataController.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		A4230AEF1EB596CA0029531B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A4230AF21EB5A0360029531B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A4230AF71EB5A7700029531B /* AirportAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportAPI.swift; sourceTree = "<group>"; };
-		A45572871EB8541D00B315A4 /* testTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testTableViewController.swift; sourceTree = "<group>"; };
 		A4A2EA401EB6A2F200C5A4C5 /* AirportDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirportDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +112,6 @@
 				A4230AE71EB594EA0029531B /* AirportsController.swift */,
 				A4A2EA401EB6A2F200C5A4C5 /* AirportDataController.swift */,
 				A4230AEF1EB596CA0029531B /* MapViewController.swift */,
-				A45572871EB8541D00B315A4 /* testTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -229,7 +226,6 @@
 				A4230AF01EB596CA0029531B /* MapViewController.swift in Sources */,
 				A4230AE81EB594EA0029531B /* AirportsController.swift in Sources */,
 				A4230AE21EB593770029531B /* AirportCodeCell.swift in Sources */,
-				A45572881EB8541D00B315A4 /* testTableViewController.swift in Sources */,
 				A4230AE61EB594230029531B /* HomeViewController.swift in Sources */,
 				A4230ADA1EB592700029531B /* Airport.swift in Sources */,
 				A4A2EA411EB6A2F200C5A4C5 /* AirportDataController.swift in Sources */,

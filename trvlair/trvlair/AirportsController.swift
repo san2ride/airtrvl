@@ -22,7 +22,7 @@ class AirportsController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewWillAppear(animated)
         
         self.airportsArray = DataStore.sharedInstance.airportArray
         tableView.reloadData()
