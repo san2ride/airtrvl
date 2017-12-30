@@ -10,14 +10,17 @@ import UIKit
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
-    
     @IBOutlet var iataCodeField: UITextField!
-    
     
     var airportAPI = AirportAPI()
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Destination"
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         // Clear first responder
         view.endEditing(true)
@@ -25,23 +28,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         iataCodeField.resignFirstResponder()
-        
         return true
     }
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
-        
     }
-    
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-    
         if let destination = iataCodeField.text {
             airportAPI.retrieveCode(destination)
-
         }
     }
-    
-
 }

@@ -10,7 +10,6 @@ import UIKit
 
 class AirportsController: UITableViewController {
     
-    let kAirport = "kAirport"
     var currentAirport: Airport?
     var airportsArray = [Airport]()
     
@@ -20,12 +19,21 @@ class AirportsController: UITableViewController {
         
         navigationItem.rightBarButtonItem = editButtonItem
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Airports"
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.airportsArray = DataStore.sharedInstance.airportArray
-        tableView.reloadData()
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,16 +41,12 @@ class AirportsController: UITableViewController {
         return airportsArray.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AirportCodeCell
         
-        self.currentAirport = DataStore.sharedInstance.airportArray[indexPath.row]
+        let airport = airportsArray[indexPath.row]
+        cell.configureCell(airport: airport)
         
-        cell.airportNameLabel.text = currentAirport?.name
-        cell.airportCodeLabel.text = currentAirport?.iata
-
         return cell
     }
     
@@ -61,13 +65,15 @@ class AirportsController: UITableViewController {
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             ac.addAction(cancelAction)
             
-            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) -> Void in
+            let deleteAction = UIAlertAction(title: "Delete",
+                                             style: .destructive,
+                                           handler: { (action) -> Void in
             
                 // Remove the item from the DataStore
                 DataStore.sharedInstance.removeAirport(airport: airport)
                 
                 // Also remove that row from the tableview with animation
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
 
             })
             ac.addAction(deleteAction)
@@ -80,7 +86,7 @@ class AirportsController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.currentAirport = self.airportsArray[(indexPath as NSIndexPath).row]
+        currentAirport = self.airportsArray[(indexPath as IndexPath).row]
         self.performSegue(withIdentifier: "AirportDataSegue", sender: nil)
     }
     
@@ -96,8 +102,4 @@ class AirportsController: UITableViewController {
         
         controller?.theAirport = self.currentAirport
     }
-    
-    
-    
-    
 }

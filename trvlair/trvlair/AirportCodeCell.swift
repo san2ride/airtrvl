@@ -13,5 +13,9 @@ class AirportCodeCell: UITableViewCell {
     @IBOutlet var airportNameLabel: UILabel!
     @IBOutlet var airportCodeLabel: UILabel!
     
-    
+    internal func configureCell(airport: Airport) {
+        airportNameLabel.text = airport.name
+        airportCodeLabel.text = airport.iata
+    }
+
 }

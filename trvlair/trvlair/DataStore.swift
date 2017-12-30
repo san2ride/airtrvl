@@ -18,10 +18,10 @@ class DataStore: NSObject {
     
     
 //    func createAirport() -> Airport {
-//        let newAirport = Airport(dict: JSONDictionary)
-//        
+//        let newAirport = Airport()
+//
 //        airportArray.append(newAirport)
-//        
+//
 //        return newAirport
 //    }
     
@@ -35,7 +35,6 @@ class DataStore: NSObject {
         if fromIndex == toIndex {
             return
         }
-        
         // Get reference to object being moved so you can re-insert it
         let movedAirport = airportArray[fromIndex]
         
@@ -44,6 +43,5 @@ class DataStore: NSObject {
         
         // Insert airport in array at new location
         airportArray.insert(movedAirport, at: toIndex)
-        
     }
 }

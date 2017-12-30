@@ -57,5 +57,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>TRVLAIR is locating your airport.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>TRVLAIR is locating your airport.</string>
 </dict>
 </plist>

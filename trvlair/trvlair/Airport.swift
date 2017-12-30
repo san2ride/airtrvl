@@ -70,9 +70,5 @@ class Airport: NSObject {
         } else {
             print("I could not parse the longitude")
         }
-        
     }
-    
-    
-
 }

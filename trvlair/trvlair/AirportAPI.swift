@@ -34,25 +34,18 @@ class AirportAPI {
         
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: {
             (data, response, error) -> Void in
-            
             if (error != nil) {
                 print(error!)
             } else {
-                
                 if let data = data {
-                    
                     do {
-                        
                         if let dict = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:AnyObject] {
                             print(dict)
                             if let airportDict = dict["airport"] as? JSONDictionary {
-                                
                                 let airport = Airport(dict: airportDict)
                                 print("Airport")
-                                
                                 DispatchQueue.main.async (execute: {
                                     DataStore.sharedInstance.airportArray.append(airport)
-                                    
                                 })
                             }
                         }
@@ -63,7 +56,5 @@ class AirportAPI {
             }
         })
         dataTask.resume()
-        
     }
-
 }
